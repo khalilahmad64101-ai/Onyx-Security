@@ -76,7 +76,6 @@ export default function Navbar({
             <div className="flex items-stretch justify-center gap-[10px] flex-1 h-full">
               {/* Home Tab */}
               <button
-                onClick={() => handleTabChange('home')}
                 className={`px-[52px] flex items-center justify-center font-bold text-[14px] transition-all cursor-pointer h-full ${
                   currentTab === 'home'
                     ? 'bg-[#CECED0] text-black border-b-2 border-gold'
@@ -88,7 +87,6 @@ export default function Navbar({
 
               {/* About Us Tab */}
               <button
-                onClick={() => handleTabChange('about')}
                 className={`px-[52px] flex items-center justify-center font-bold text-[14px] transition-all cursor-pointer h-full ${
                   currentTab === 'about'
                     ? 'bg-[#CECED0] text-black border-b-2 border-gold'
@@ -105,7 +103,6 @@ export default function Navbar({
                 onMouseLeave={() => setServicesDropdownOpen(false)}
               >
                 <button
-                  onClick={() => handleTabChange('services')}
                   className={`px-[52px] flex items-center justify-center font-bold text-[14px] gap-1 transition-all cursor-pointer h-full ${
                     currentTab === 'services'
                       ? 'bg-[#CECED0] text-black border-b-2 border-gold'
@@ -113,52 +110,15 @@ export default function Navbar({
                   }`}
                 >
                   <span>Security Services</span>
-                  <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${ facilitiesDropdownOpen-180}`} />
                 </button>
-
-                {/* Dropdown Menu */}
-                <AnimatePresence>
-                  {servicesDropdownOpen && (
-                    <motion.div 
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.15 }}
-                      className="absolute left-1/2 -translate-x-1/2 top-full w-80 bg-neutral-950 text-neutral-200 shadow-2xl border border-neutral-800 rounded-b-md overflow-hidden"
-                    >
-                      <div className="p-3 bg-neutral-900 border-b border-neutral-800 text-[11px] font-bold text-gold tracking-wider uppercase px-4 flex items-center gap-1.5">
-                        <Shield className="w-3.5 h-3.5" /> Specialist Guarding
-                      </div>
-                      <div className="max-h-[380px] overflow-y-auto py-1">
-                        {SECURITY_SERVICES.map((service) => (
-                          <button
-                            key={service.id}
-                            onClick={() => handleServiceClick(service.id)}
-                            className="w-full text-left px-4 py-2 text-sm hover:bg-gold hover:text-black transition-colors flex items-start gap-3 cursor-pointer border-b border-neutral-900/40 last:border-0"
-                          >
-                            <div className="mt-0.5 text-gold hover:text-inherit">
-                              <NavbarIcon name={service.iconName} className="w-4 h-4" />
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <span className="font-semibold block truncate">{service.title}</span>
-                              <span className="text-[11px] opacity-70 block truncate font-light">{service.shortDesc}</span>
-                            </div>
-                          </button>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
               </div>
 
               {/* Facilities Management Dropdown */}
               <div 
                 className="relative flex h-full"
-                onMouseEnter={() => setFacilitiesDropdownOpen(true)}
-                onMouseLeave={() => setFacilitiesDropdownOpen(false)}
               >
                 <button
-                  onClick={() => handleTabChange('facilities')}
                   className={`px-[52px] flex items-center justify-center font-bold text-[14px] gap-1 transition-all cursor-pointer h-full ${
                     currentTab === 'facilities'
                       ? 'bg-[#CECED0] text-black border-b-2 border-gold'
@@ -170,43 +130,11 @@ export default function Navbar({
                 </button>
 
                 {/* Dropdown Menu */}
-                <AnimatePresence>
-                  {facilitiesDropdownOpen && (
-                    <motion.div 
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.15 }}
-                      className="absolute left-1/2 -translate-x-1/2 top-full w-80 bg-neutral-950 text-neutral-200 shadow-2xl border border-neutral-800 rounded-b-md overflow-hidden"
-                    >
-                      <div className="p-3 bg-neutral-900 border-b border-neutral-800 text-[11px] font-bold text-gold tracking-wider uppercase px-4 flex items-center gap-1.5">
-                        <Wrench className="w-3.5 h-3.5" /> Facility Solutions
-                      </div>
-                      <div className="max-h-[380px] overflow-y-auto py-1">
-                        {FACILITIES_SERVICES.map((facility) => (
-                          <button
-                            key={facility.id}
-                            onClick={() => handleFacilityClick(facility.id)}
-                            className="w-full text-left px-4 py-2 text-sm hover:bg-gold hover:text-black transition-colors flex items-start gap-3 cursor-pointer border-b border-neutral-900/40 last:border-0"
-                          >
-                            <div className="mt-0.5 text-gold hover:text-inherit">
-                              <NavbarIcon name={facility.iconName} className="w-4 h-4" />
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <span className="font-semibold block truncate">{facility.title}</span>
-                              <span className="text-[11px] opacity-70 block truncate font-light">{facility.description}</span>
-                            </div>
-                          </button>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                
               </div>
 
               {/* Contact Tab */}
               <button
-                onClick={() => handleTabChange('contact')}
                 className={`px-[52px] flex items-center justify-center font-bold text-[14px] transition-all cursor-pointer h-full ${
                   currentTab === 'contact'
                     ? 'bg-[#CECED0] text-black border-b-2 border-gold'

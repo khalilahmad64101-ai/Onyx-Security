@@ -87,7 +87,6 @@ export default function OurServicesSection({
           {FEATURED_SERVICES.map((item, index) => (
             <div 
               key={index}
-              onClick={() => handleServiceClick(item)}
               className="flex flex-col bg-[#333333] overflow-hidden group cursor-pointer"
             >
               {/* Image container */}
