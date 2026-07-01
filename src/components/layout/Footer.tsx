@@ -184,13 +184,7 @@ export default function Footer({
         
         {/* ACT Logo layout */}
         <div className="flex items-center gap-4 text-white">
-          <span className="text-4xl sm:text-5xl font-black tracking-tighter">ACT</span>
-          <div className="h-10 w-[2px] bg-neutral-600"></div>
-          <div className="flex flex-col justify-center leading-none text-left select-none">
-            <span className="text-[10px] sm:text-[11px] font-semibold tracking-wider text-neutral-200">ACTION</span>
-            <span className="text-[10px] sm:text-[11px] font-semibold tracking-wider text-neutral-200">COUNTERS</span>
-            <span className="text-[10px] sm:text-[11px] font-semibold tracking-wider text-neutral-200">TERRORISM</span>
-          </div>
+          <img className="h-30 w-60"  src="https://khalilahmad12.github.io/oxes-images/bg-removed.png" alt="" />
         </div>
 
         {/* Copyright and Staff Portal Link wrapper */}
