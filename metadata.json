@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Remix: Onyx Security",
+  "description": "Professional security officers, door supervision, event security, CCTV, and facilities management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
