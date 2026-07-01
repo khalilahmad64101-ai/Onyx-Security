@@ -19,7 +19,7 @@ const SLIDE_IMAGES = [
   'https://khalilahmad12.github.io/oxes-images/slide-3.png', // Event & Shows Security
   'https://khalilahmad12.github.io/oxes-images/camrea.png',  // Security Camera Solutions (CCTV camera close-up)
   'https://khalilahmad12.github.io/oxes-images/slide-2.png', // Facilities Management
-  onyxGuardHeroImage // Corporate Branding (Security uniform + Onyx logo)
+  "https://khalilahmad12.github.io/oxes-images/image-slider-last.png" // Corporate Branding (Security uniform + Onyx logo)
 ];
 
 // Visual color tint overlays to give each slide a unique artistic corporate feeling
